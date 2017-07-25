@@ -11,10 +11,17 @@ import UIKit
 let kOMContactCellReuseIdentifier = "ContactCellReuseIdentifier"
 
 class OMContactsViewController: UIViewController {
+    
+    @IBOutlet weak var contactsTableView: UITableView!
+    
+    var allContacts = [OMLocalContact]()
+    var visibleContacts = [OMLocalContact]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        allContacts = OMContactsStorage.sharedStorage.contacts()
+        visibleContacts = allContacts
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,16 +33,23 @@ class OMContactsViewController: UIViewController {
 }
 
 extension OMContactsViewController: UITableViewDataSource {
+    
+    func makeContactName(contact: OMLocalContact) -> String {
+        return "\(contact.firstName) \(contact.lastName)"
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: kOMContactCellReuseIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: kOMContactCellReuseIdentifier)
         }
+        let contact = visibleContacts[indexPath.row]
+        cell?.textLabel?.text = makeContactName(contact: contact)
         return cell!
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        return visibleContacts.count
     }
 
 }
@@ -46,4 +60,17 @@ extension OMContactsViewController: UITableViewDelegate {
 
 extension OMContactsViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            visibleContacts = allContacts
+        } else {
+            visibleContacts = []
+            for contact in allContacts {
+                if makeContactName(contact: contact).lowercased().contains(searchText.lowercased()) {
+                    visibleContacts.append(contact)
+                }
+            }
+        }
+        contactsTableView.reloadData()       
+    }
 }
