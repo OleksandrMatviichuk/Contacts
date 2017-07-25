@@ -24,6 +24,9 @@ class OMContactsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         allContacts = OMContactsStorage.sharedStorage.contacts()
         visibleContacts = allContacts
+        visibleContacts.sort { (first, second) -> Bool in
+            return makeContactName(contact: first) <= makeContactName(contact: second)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +82,9 @@ extension OMContactsViewController: UISearchBarDelegate {
                     visibleContacts.append(contact)
                 }
             }
+        }
+        visibleContacts.sort { (first, second) -> Bool in
+            return makeContactName(contact: first) <= makeContactName(contact: second)
         }
         contactsTableView.reloadData()       
     }
