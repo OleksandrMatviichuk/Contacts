@@ -9,10 +9,12 @@
 import UIKit
 
 class OMContactInfoViewController: UIViewController {
+    
+    var contact: OMLocalContact? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(contact?.firstName)
         // Do any additional setup after loading the view.
     }
 

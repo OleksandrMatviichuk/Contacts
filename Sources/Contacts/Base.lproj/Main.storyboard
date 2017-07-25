@@ -65,7 +65,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Col-gK-abv" kind="show" id="Y5e-KQ-iYW"/>
+                                            <segue destination="Col-gK-abv" kind="show" identifier="ContactsScreenOpenContactIdentifier" id="Y5e-KQ-iYW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,7 +90,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="xIb-Oi-ObQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ptw-9f-5po">
                             <connections>
-                                <segue destination="Zat-bR-VKM" kind="show" id="EeC-o3-dzx"/>
+                                <segue destination="Zat-bR-VKM" kind="show" identifier="contactsScreenAddSegueIdentifier" id="EeC-o3-dzx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

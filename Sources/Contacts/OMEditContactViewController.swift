@@ -9,6 +9,8 @@
 import UIKit
 
 class OMEditContactViewController: UIViewController {
+    
+    var contact: OMContact? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,9 @@ class OMEditContactViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.backBarButtonItem?.title = "Hi"
+        if contact == nil {
+            navigationItem.title = "New Contact"
+        }
     }
     
 

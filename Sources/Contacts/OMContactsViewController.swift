@@ -8,7 +8,9 @@
 
 import UIKit
 
-let kOMContactCellReuseIdentifier = "ContactCellReuseIdentifier"
+private let kOMContactCellReuseIdentifier = "ContactCellReuseIdentifier"
+private let kOMContactsScreenAddSegueIdentifier = "contactsScreenAddSegueIdentifier"
+private let kOMContactsScreenOpenContactIdentifier = "ContactsScreenOpenContactIdentifier"
 
 class OMContactsViewController: UIViewController {
     
@@ -28,8 +30,15 @@ class OMContactsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier  == kOMContactsScreenOpenContactIdentifier {
+            let vc = segue.destination as! OMContactInfoViewController
+            let selectedRowIndexPath = contactsTableView.indexPathForSelectedRow
+            contactsTableView.deselectRow(at: selectedRowIndexPath!, animated: false)
+            vc.contact = visibleContacts[selectedRowIndexPath!.row]
+        }
+    }
 }
 
 extension OMContactsViewController: UITableViewDataSource {
