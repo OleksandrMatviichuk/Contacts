@@ -20,6 +20,7 @@ class OMEditContactViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var deleteContactButton: UIButton!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +36,7 @@ class OMEditContactViewController: UIViewController {
             cityTextField.text = contact!.city
             stateTextField.text = contact!.state
             zipCodeTextField.text = contact!.zipCode
+            deleteContactButton.isHidden = false
         }
     }
 
@@ -43,6 +45,12 @@ class OMEditContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func deleteContactButtonPressed(_ sender: Any) {
+        if contact != nil {
+            OMContactsStorage.sharedStorage.deleteContact(contact: contact!)
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
     @IBAction func doneButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         let firstName = firstNameTextField.text ?? ""

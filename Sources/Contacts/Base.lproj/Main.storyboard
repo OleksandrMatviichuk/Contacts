@@ -347,12 +347,25 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-YW-3sx">
+                                <rect key="frame" x="16" y="627" width="343" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Delete Contact">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteContactButtonPressed:" destination="Zat-bR-VKM" eventType="touchUpInside" id="IQj-PS-Oax"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dMP-f3-RYg" firstAttribute="top" secondItem="Jp8-YW-3sx" secondAttribute="bottom" constant="8" id="4jB-2L-Vkb"/>
+                            <constraint firstItem="Jp8-YW-3sx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wu9-HK-oZe" secondAttribute="bottom" id="6NW-tL-cGT"/>
+                            <constraint firstItem="Jp8-YW-3sx" firstAttribute="leading" secondItem="ag6-x0-em1" secondAttribute="leadingMargin" id="7f8-ft-x6P"/>
                             <constraint firstItem="wu9-HK-oZe" firstAttribute="top" secondItem="9PF-EU-hAe" secondAttribute="bottom" constant="8" id="Ffc-3s-WN5"/>
                             <constraint firstItem="wu9-HK-oZe" firstAttribute="leading" secondItem="ag6-x0-em1" secondAttribute="leadingMargin" id="dOq-Rc-FKy"/>
-                            <constraint firstItem="dMP-f3-RYg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wu9-HK-oZe" secondAttribute="bottom" id="n1U-am-fPv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jp8-YW-3sx" secondAttribute="trailing" id="wLn-fr-xiw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wu9-HK-oZe" secondAttribute="trailing" id="yUi-wn-RD7"/>
                         </constraints>
                     </view>
@@ -370,6 +383,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityTextField" destination="KbF-En-QA7" id="m4E-Rl-Osi"/>
+                        <outlet property="deleteContactButton" destination="Jp8-YW-3sx" id="gSh-Ur-ugz"/>
                         <outlet property="firstNameTextField" destination="oUh-3a-9aQ" id="qsw-Am-GkI"/>
                         <outlet property="lastNameTextField" destination="0ox-zS-o1u" id="WiU-qb-WzB"/>
                         <outlet property="phoneNumberTextField" destination="wUG-yG-N9Z" id="6Wl-5l-mkd"/>
