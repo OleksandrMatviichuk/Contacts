@@ -48,7 +48,16 @@ public class OMContactsStorage: NSObject {
         return mutableContacts
     }
     
-    public func deleteContact(contact: OMLocalContact) {
+    public func deleteContact(index: Int) {
+        let contactsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: kOMContactEntityName)
+        do {
+            if let contacts = try persistentContainer.viewContext.fetch(contactsFetchRequest) as? [OMContact] {
+                persistentContainer.viewContext.delete(contacts[index])
+                saveContext()
+            }
+        } catch {
+            
+        }
         
     }
     private func loadContacts() {
