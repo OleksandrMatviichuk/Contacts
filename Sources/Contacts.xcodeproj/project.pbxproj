@@ -76,6 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A604CF901F27699500AE1B41 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		A6D260D11F2762A400E55C0F = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +106,7 @@
 		A6D260DC1F2762A400E55C0F /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				A604CF901F27699500AE1B41 /* UI */,
 				A6D260DD1F2762A400E55C0F /* AppDelegate.swift */,
 				A6D260DF1F2762A400E55C0F /* ViewController.swift */,
 				A6D260E11F2762A400E55C0F /* Main.storyboard */,
@@ -520,6 +528,7 @@
 				A6D261071F2762A400E55C0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6D261081F2762A400E55C0F /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +537,7 @@
 				A6D2610A1F2762A400E55C0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6D2610B1F2762A400E55C0F /* Build configuration list for PBXNativeTarget "ContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +546,7 @@
 				A6D2610D1F2762A400E55C0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
