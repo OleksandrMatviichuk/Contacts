@@ -19,20 +19,21 @@ class OMContactsViewController: UIViewController {
     var allContacts = [OMLocalContact]()
     var visibleContacts = [OMLocalContact]()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        allContacts = OMContactsStorage.sharedStorage.contacts()
-        visibleContacts = allContacts
-        visibleContacts.sort { (first, second) -> Bool in
-            return makeContactName(contact: first) <= makeContactName(contact: second)
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        allContacts = OMContactsStorage.sharedStorage.contacts()
+        visibleContacts = allContacts
+        visibleContacts.sort { (first, second) -> Bool in
+            return makeContactName(contact: first) <= makeContactName(contact: second)
+        }
+        contactsTableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier  == kOMContactsScreenOpenContactIdentifier {

@@ -48,11 +48,43 @@ public class OMContactsStorage: NSObject {
         return mutableContacts
     }
     
-    public func deleteContact(index: Int) {
+    public func updateContact(contact: OMLocalContact, firstName: String, lastName: String, phoneNumber: String, StreetAddress1: String, StreetAddress2: String, city: String, state: String, zipCode: String) {
+        let index = mutableContacts.index(of: contact)
         let contactsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: kOMContactEntityName)
         do {
             if let contacts = try persistentContainer.viewContext.fetch(contactsFetchRequest) as? [OMContact] {
-                persistentContainer.viewContext.delete(contacts[index])
+                let contact = contacts[index!]
+                contact.firstName = firstName
+                contact.lastName = lastName
+                contact.phoneNumber = phoneNumber
+                contact.streetAddress1 = StreetAddress1
+                contact.streetAddress2 = StreetAddress2
+                contact.state = state
+                contact.city = city
+                contact.zipCode = zipCode
+                saveContext()
+            }
+        } catch {
+            
+        }
+        let localContact = mutableContacts[index!]
+        localContact.firstName = firstName
+        localContact.lastName = lastName
+        localContact.phoneNumber = phoneNumber
+        localContact.streetAddress1 = StreetAddress1
+        localContact.streetAddress2 = StreetAddress2
+        localContact.city = city
+        localContact.state = state
+        localContact.zipCode = zipCode
+    }
+    
+    public func deleteContact(contact: OMLocalContact) {
+        let index = mutableContacts.index(of: contact)
+        mutableContacts.remove(at: index!)
+        let contactsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: kOMContactEntityName)
+        do {
+            if let contacts = try persistentContainer.viewContext.fetch(contactsFetchRequest) as? [OMContact] {
+                persistentContainer.viewContext.delete(contacts[index!])
                 saveContext()
             }
         } catch {

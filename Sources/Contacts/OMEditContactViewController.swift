@@ -45,6 +45,19 @@ class OMEditContactViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let phoneNumber = phoneNumberTextField.text ?? ""
+        let streetAddress1 = streetAddress1TextField.text ?? ""
+        let streetAddress2 = streetAddress2TextField.text ?? ""
+        let city = cityTextField.text ?? ""
+        let state = stateTextField.text ?? ""
+        let zipCode = zipCodeTextField.text ?? ""
+        if contact != nil {
+            OMContactsStorage.sharedStorage.updateContact(contact: contact!, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, StreetAddress1: streetAddress1, StreetAddress2: streetAddress2, city: city, state: state, zipCode: zipCode)
+        } else {
+            OMContactsStorage.sharedStorage.saveContactWith(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, StreetAddress1: streetAddress1, StreetAddress2: streetAddress2, city: city, state: state, zipCode: zipCode)
+        }
     }
 
     @IBAction func cancelButtonBpressed(_ sender: Any) {
