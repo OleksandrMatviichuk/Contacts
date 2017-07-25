@@ -1,0 +1,112 @@
+[
+    {
+        "contactID": "1",
+        "firstName": "Oleksandr",
+        "lastName": "Matviichuk",
+        "phoneNumber": "+380680602482",
+        "streetAddress1": "208",
+        "streetAddress2": "Methalistiv street",
+        "city": "Kyiv",
+        "state": "",
+        "zipCode": "03057"
+    },
+    {
+        "contactID": "2",
+        "firstName": "Ivan",
+        "lastName": "Pupkin",
+        "phoneNumber": "+380200459654",
+        "streetAddress1": "47",
+        "streetAddress2": "Frankivska",
+        "city": "Kyiv",
+        "state": "",
+        "zipCode": "03057"
+    },
+    {
+        "contactID": "3",
+        "firstName": "Dmitriy",
+        "lastName": "Pidkova",
+        "phoneNumber": "+380254568694",
+        "streetAddress1": "23",
+        "streetAddress2": "Lepsa",
+        "city": "Lviv",
+        "state": "",
+        "zipCode": "02876"
+    },
+    {
+        "contactID": "4",
+        "firstName": "John",
+        "lastName": "Applessed",
+        "phoneNumber": "8885555512",
+        "streetAddress1": "3494",
+        "streetAddress2": "Kuhl Avenue",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30303"
+    },
+    {
+        "contactID": "5",
+        "firstName": "Kate",
+        "lastName": "Bell",
+        "phoneNumber": "5555648583",
+        "streetAddress1": "165",
+        "streetAddress2": "DavisStreet",
+        "city": "Hillsborough",
+        "state": "CA",
+        "zipCode": "94010"
+    },
+    {
+        "contactID": "6",
+        "firstName": "Daniel",
+        "lastName": "Higgins",
+        "phoneNumber": "5554787672",
+        "streetAddress1": "322",
+        "streetAddress2": "Laguna Street",
+        "city": "Corte Madera",
+        "state": "CA",
+        "zipCode": "94925"
+    },
+    {
+        "contactID": "7",
+        "firstName": "Anna",
+        "lastName": "Haro",
+        "phoneNumber": "5555228243",
+        "streetAddress1": "1001",
+        "streetAddress2": "Leavenworth Street",
+        "city": "Sausalito",
+        "state": "CA",
+        "zipCode": "94965"
+    },
+    {
+        "contactID": "8",
+        "firstName": "David",
+        "lastName": "Taylor",
+        "phoneNumber": "5556106679",
+        "streetAddress1": "1747",
+        "streetAddress2": "Steuart Street",
+        "city": "Tiburon",
+        "state": "CA",
+        "zipCode": "94920"
+    },
+    {
+        "contactID": "9",
+        "firstName": "Hank",
+        "lastName": "Zakroff",
+        "phoneNumber": "5557664823",
+        "streetAddress1": "1741",
+        "streetAddress2": "Kearny Street",
+        "city": "San Rafael",
+        "state": "CA",
+        "zipCode": "94901"
+    },
+    {
+        "contactID": "10",
+        "firstName": "Helen",
+        "lastName": "Zaguza",
+        "phoneNumber": "5556557784",
+        "streetAddress1": "123",
+        "streetAddress2": "Manhattan Street",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "95986"
+    }
+]

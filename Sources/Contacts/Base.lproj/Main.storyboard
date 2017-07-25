@@ -28,7 +28,7 @@
         <!--Contacts-->
         <scene sceneID="i9g-0A-kgU">
             <objects>
-                <viewController id="SiB-Pv-zET" sceneMemberID="viewController">
+                <viewController id="SiB-Pv-zET" customClass="OMContactsViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="viK-Fc-ksz"/>
                         <viewControllerLayoutGuide type="bottom" id="ItQ-P5-Br0"/>
@@ -37,26 +37,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AgP-sl-W2y">
+                            <searchBar contentMode="redraw" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="AgP-sl-W2y">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SiB-Pv-zET" id="oXc-sD-5jO"/>
+                                </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Zl-0A-FKH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Zl-0A-FKH">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Xw-7W-PvE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCellReuseIdentifier" textLabel="fkQ-tX-mfo" style="IBUITableViewCellStyleDefault" id="6Xw-7W-PvE">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Xw-7W-PvE" id="zcS-Md-b8T">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fkQ-tX-mfo">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Col-gK-abv" kind="show" id="Y5e-KQ-iYW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SiB-Pv-zET" id="JEn-8f-fIV"/>
+                                    <outlet property="delegate" destination="SiB-Pv-zET" id="Mho-Bk-mfu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1036" y="80.50974512743629"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Info View Controller-->
         <scene sceneID="93B-fa-Fcl">
             <objects>
-                <viewController id="Col-gK-abv" sceneMemberID="viewController">
+                <viewController id="Col-gK-abv" customClass="OMContactInfoViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7NQ-ee-SVM"/>
                         <viewControllerLayoutGuide type="bottom" id="hJo-4a-9Ky"/>
@@ -107,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="1903" y="-274"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Contact View Controller-->
         <scene sceneID="dWL-Uh-jOq">
             <objects>
-                <viewController id="Zat-bR-VKM" sceneMemberID="viewController">
+                <viewController id="Zat-bR-VKM" customClass="OMEditContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9PF-EU-hAe"/>
                         <viewControllerLayoutGuide type="bottom" id="dMP-f3-RYg"/>
@@ -121,7 +138,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="kdz-pp-NYY">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="tBE-De-RNq"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="MSN-t6-iQW"/>
                     </navigationItem>
                 </viewController>
