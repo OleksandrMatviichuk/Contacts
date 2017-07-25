@@ -63,19 +63,21 @@ public class OMContactsStorage: NSObject {
                 contact.city = city
                 contact.zipCode = zipCode
                 saveContext()
+                
+                let localContact = mutableContacts[index!]
+                localContact.firstName = firstName
+                localContact.lastName = lastName
+                localContact.phoneNumber = phoneNumber
+                localContact.streetAddress1 = StreetAddress1
+                localContact.streetAddress2 = StreetAddress2
+                localContact.city = city
+                localContact.state = state
+                localContact.zipCode = zipCode
             }
         } catch {
-            
+            print("fetch error : \(error)")
         }
-        let localContact = mutableContacts[index!]
-        localContact.firstName = firstName
-        localContact.lastName = lastName
-        localContact.phoneNumber = phoneNumber
-        localContact.streetAddress1 = StreetAddress1
-        localContact.streetAddress2 = StreetAddress2
-        localContact.city = city
-        localContact.state = state
-        localContact.zipCode = zipCode
+        
     }
     
     public func deleteContact(contact: OMLocalContact) {
@@ -88,7 +90,7 @@ public class OMContactsStorage: NSObject {
                 saveContext()
             }
         } catch {
-            
+            print("fetch error : \(error)")
         }
         
     }
@@ -111,7 +113,7 @@ public class OMContactsStorage: NSObject {
                 }
             }
         } catch {
-            
+            print("fetch error : \(error)")
         }
     }
     

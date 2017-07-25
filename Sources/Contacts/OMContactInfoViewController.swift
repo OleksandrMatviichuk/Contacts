@@ -25,13 +25,16 @@ class OMContactInfoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        contactNameLabel.text = "\(contact!.firstName) \(contact!.lastName)"
-        phoneNumberLabel.text = contact?.phoneNumber != nil ? contact?.phoneNumber : " "
-        streetAddress1Label.text = contact?.streetAddress1 != nil ? contact?.streetAddress1 : " "
-        streetAddress2Label.text = contact?.streetAddress2 != nil ? contact?.streetAddress2 : " "
-        cityLabel.text = contact?.city != nil ? contact?.city : " "
-        stateLabel.text = contact?.state ?? " "
-        zipCodeLabel.text = contact?.zipCode ?? " "
+        if contact != nil {
+            contactNameLabel.text = "\(contact!.firstName) \(contact!.lastName)"
+            phoneNumberLabel.text = contact?.phoneNumber ?? " "
+            streetAddress1Label.text = contact?.streetAddress1 ?? " "
+            streetAddress2Label.text = contact?.streetAddress2 ?? " "
+            cityLabel.text = contact?.city != nil ? contact?.city : " "
+            stateLabel.text = contact?.state ?? " "
+            zipCodeLabel.text = contact?.zipCode ?? " "
+
+        }
     }
     
     override func didReceiveMemoryWarning() {
