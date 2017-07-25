@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A669AE751F277D5600DC4BA3 /* OMAddressExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE741F277D5600DC4BA3 /* OMAddressExtension.swift */; };
 		A669AE771F277D7800DC4BA3 /* OMContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE761F277D7800DC4BA3 /* OMContactExtension.swift */; };
-		A669AE791F277D9400DC4BA3 /* OMPhoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE781F277D9400DC4BA3 /* OMPhoneExtension.swift */; };
 		A669AE7B1F277DB200DC4BA3 /* OMContactsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE7A1F277DB200DC4BA3 /* OMContactsStorage.swift */; };
 		A669AE7D1F277EBF00DC4BA3 /* MOUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE7C1F277EBF00DC4BA3 /* MOUserDefaultsExtension.swift */; };
 		A669AE7F1F27855400DC4BA3 /* OMLocalContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669AE7E1F27855400DC4BA3 /* OMLocalContact.swift */; };
@@ -44,9 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A669AE741F277D5600DC4BA3 /* OMAddressExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMAddressExtension.swift; sourceTree = "<group>"; };
 		A669AE761F277D7800DC4BA3 /* OMContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMContactExtension.swift; sourceTree = "<group>"; };
-		A669AE781F277D9400DC4BA3 /* OMPhoneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMPhoneExtension.swift; sourceTree = "<group>"; };
 		A669AE7A1F277DB200DC4BA3 /* OMContactsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMContactsStorage.swift; sourceTree = "<group>"; };
 		A669AE7C1F277EBF00DC4BA3 /* MOUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		A669AE7E1F27855400DC4BA3 /* OMLocalContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMLocalContact.swift; sourceTree = "<group>"; };
@@ -179,9 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D260E41F2762A400E55C0F /* Contacts.xcdatamodeld */,
-				A669AE741F277D5600DC4BA3 /* OMAddressExtension.swift */,
 				A669AE761F277D7800DC4BA3 /* OMContactExtension.swift */,
-				A669AE781F277D9400DC4BA3 /* OMPhoneExtension.swift */,
 				A669AE7A1F277DB200DC4BA3 /* OMContactsStorage.swift */,
 			);
 			name = CoreData;
@@ -330,9 +324,7 @@
 				A6D260E01F2762A400E55C0F /* OMContactsViewController.swift in Sources */,
 				A6EF61551F2771FB0059DFD9 /* OMContactInfoViewController.swift in Sources */,
 				A6D260DE1F2762A400E55C0F /* AppDelegate.swift in Sources */,
-				A669AE751F277D5600DC4BA3 /* OMAddressExtension.swift in Sources */,
 				A6D260E61F2762A400E55C0F /* Contacts.xcdatamodeld in Sources */,
-				A669AE791F277D9400DC4BA3 /* OMPhoneExtension.swift in Sources */,
 				A669AE7B1F277DB200DC4BA3 /* OMContactsStorage.swift in Sources */,
 				A669AE771F277D7800DC4BA3 /* OMContactExtension.swift in Sources */,
 				A669AE7D1F277EBF00DC4BA3 /* MOUserDefaultsExtension.swift in Sources */,

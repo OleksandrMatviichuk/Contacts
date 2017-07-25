@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        if UserDefaults.standard.runFirstly {
+        if UserDefaults.standard.runFirstly {
             loadContacts()
-//            UserDefaults.standard.runFirstly = false
-//        }
+            UserDefaults.standard.runFirstly = false
+        }
         return true
     }
 
@@ -46,14 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func loadContacts() {
-        var contacts = [OMContact]()
         do {
             if let contactsJsonPath = Bundle.main.url(forResource: "Contacts", withExtension: "json") {
                 let data = try Data(contentsOf: contactsJsonPath)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                for contactInDictionary in (json as? [Any])! {
-                    let localContact = OMLocalContact(dictionary: (contactInDictionary as? [String: String])!)
-                    print(localContact.contactID)
+                for contactInDictionary in (json as? [Dictionary<String, String>])! {
+                    let firstName = contactInDictionary["firstName"] != nil ? contactInDictionary["firstName"]! : "";
+                    let lastName = contactInDictionary["lastName"] != nil ? contactInDictionary["lastName"]! : "";
+                    let phoneNumber = contactInDictionary["phoneNumber"] != nil ? contactInDictionary["phoneNumber"]! : "";
+                    let streetAddress1 = contactInDictionary["streetAddress1"] != nil ? contactInDictionary["streetAddress1"]! : "";
+                    let streetAddress2 = contactInDictionary["streetAddress2"] != nil ? contactInDictionary["streetAddress2"]! : "";
+                    let city = contactInDictionary["city"] != nil ? contactInDictionary["city"]! : "";
+                    let state = contactInDictionary["state"] != nil ? contactInDictionary["state"]! : "";
+                    let zipCode = contactInDictionary["zipCode"] != nil ? contactInDictionary["zipCode"]! : "";
+                    OMContactsStorage.sharedStorage.saveContactWith(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, StreetAddress1: streetAddress1, StreetAddress2: streetAddress2, city: city, state: state, zipCode: zipCode)
+                    
                 }
             }
         } catch {
